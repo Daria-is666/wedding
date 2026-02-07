@@ -321,8 +321,7 @@
 
         /* Calendar */
         .calendar-container {
-            background: rgba(255,255,255,0.05);
-            background-image: url("calendare.jpg");
+            background: rgba(255,255,255,0.05), url("calendare.jpg");
             background-size: cover;
             background-position: center;
             padding: 30px;
@@ -569,15 +568,16 @@
             font-size: 1.1rem;
             letter-spacing: 2px;
             z-index: 2;
-             font-size: 2rem;
-          
-          
+             font-size: 2rem;   
         }
 
         .event-left { justify-content: flex-start; text-align: right; width: 50%; left: 0; }
         .event-right { justify-content: flex-start; text-align: left; width: 40%; left:45%; }
 
-        .time { padding: 0 10px; font-size: 1.4rem;    font-size: 2rem;
+        .time { 
+             padding: 0 10px; 
+            font-size: 1.4rem;    
+            font-size: 2rem;
             font-family: 'Cormorant Garamond', serif;
             margin-bottom: 5px;
         }}
@@ -790,10 +790,7 @@
         <section>
             <h2 class="fancy-text" style="font-size: 3rem;">Локация</h2>
             <div style="font-size: 2rem; font-family: 'Cormorant Garamond'; margin-bottom: 20px;">Коттедж Dali</div>
-            
-            <div class="location-img">
-                <span style="color: #888;">Изображение коттеджа</span>
-            </div>
+            <div class="location-img"></div>
 
             <p style="font-size: 1.2rem; font-style: italic;">пос. Синий утёс 62а</p>
             <a href="# https://go.2gis.com/0zK97" class="btn">Посмотреть на карте</a>
