@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <path
+    d="
+      M0,30
+      C80,34 160,26 240,30
+      C320,34 400,26 480,30
+      C560,34 640,26 720,30
+      C800,34 880,26 960,30
+      C1040,34 1120,26 1200,30
+      L1200,0 L0,0 Z
+    "
+    fill="#0b0b0b"
+  />
+
+  <rect width="1200" height="60" filter="url(#grain)" opacity="0.12"/>
+</svg>
