@@ -518,12 +518,11 @@
         }
       
       
-      
        /* расписание*/
       .timeline-wrapper {
             position: relative;
             width: 100%;
-            max-width: 500px;
+            max-width: 700px;
             padding: 40px 20px;
             /* Здесь можно добавить фоновое фото пары */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("timeline.jpg") no-repeat center center;
@@ -571,11 +570,19 @@
              font-size: 2rem;   
         }
 
-        .event-left { justify-content: flex-start; text-align: right; width: 50%; left: 0; }
-        .event-right { justify-content: flex-start; text-align: left; width: 40%; left:45%; }
+        .event-left { 
+          justify-content: flex-end;
+          text-align: right;
+          width: 45%;
+          left: 10%; }
+        .event-right { 
+          justify-content: flex-end;
+          text-align: left;
+          width: 45%;
+          left: 45%; }
 
         .time { 
-             padding: 0 10px; 
+            padding: 0 10px; 
             font-size: 1.4rem;    
             font-size: 2rem;
             font-family: 'Cormorant Garamond', serif;
