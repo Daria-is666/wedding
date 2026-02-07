@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 70" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#55624f"/>
+      <stop offset="100%" stop-color="#55624f" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <path
+    d="
+      M0,36
+      C60,30 120,42 180,36
+      C240,30 300,44 360,36
+      C420,30 480,44 540,36
+      C600,30 660,44 720,36
+      C780,30 840,44 900,36
+      C960,30 1020,44 1080,36
+      C1140,32 1180,38 1200,36
+      L1200,0 L0,0 Z
+    "
+    fill="url(#fade)"
+  />
+
+  <rect width="1200" height="70" filter="url(#grain)" opacity="0.18"/>
+</svg>
