@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasiliy & Tatyana — 23.05.2026</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: #0b0b0b;
+      color: #f2f2f2;
+      text-align: center;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    section {
+      padding: 90px 20px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* HERO */
+    .hero {
+      background: url('assets/hero.jpg') center / cover no-repeat;
+      padding: 160px 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 64px;
+      margin-bottom: 12px;
+    }
+
+    .hero .date {
+      letter-spacing: 3px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    /* INVITE + GREEN SECTIONS */
+    .green {
+      background: #55624f;
+    }
+
+    /* TORN SEPARATORS */
+    .torn-top::before,
+    .torn-bottom::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-size: contain;
+      background-repeat: repeat-x;
+      z-index: 3;
+    }
+
+    .torn-top::before {
+      top: -35px;
+      background-image: url('assets/torn-top.svg');
+    }
+
+    .torn-bottom::after {
+      bottom: -35px;
+      background-image: url('assets/torn-bottom.svg');
+      transform: rotate(180deg);
+    }
+
+    .torn-green::before {
+      content: '';
+      position: absolute;
+      top: -35px;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: url('assets/torn-green.svg') repeat-x;
+      background-size: contain;
+      z-index: 3;
+    }
+
+    /* CALENDAR */
+    .calendar-box {
+      background: rgba(255,255,255,0.08);
+      display: inline-block;
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .calendar-grid span {
+      opacity: 0.6;
+    }
+
+    .calendar-grid .day {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .calendar-grid .active {
+      background: #e0cfa3;
+      color: #000;
+      border-radius: 50%;
+      padding: 6px 0;
+    }
+
+    /* LOCATION */
+    .map-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      border-radius: 40px;
+      border: 1px solid #e0cfa3;
+      color: #e0cfa3;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .map-btn:hover {
+      background: #e0cfa3;
+      color: #000;
+    }
+
+    /* TIMELINE */
+    .timeline ul {
+      list-style: none;
+      padding: 0;
+      max-width: 320px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .timeline li {
+      display: flex;
+      justify-content: space-between;
+      margin: 14px 0;
+      font-size: 18px;
+    }
+
+    .timeline li::before {
+      content: '⏱';
+      margin-right: 10px;
+    }
+
+    /* DRESSCODE */
+    .colors {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .colors span {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+
+    /* FORM */
+    form {
+      max-width: 420px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input, select, button {
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    button {
+      background: #e0cfa3;
+      color: #000;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 20px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 48px; }
+      h2 { font-size: 40px; }
+      section { padding: 70px 16px; }
+      .timeline ul { max-width: 260px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Vasiliy & Tatyana</h1>
+  <div class="date">23 / 05 / 2026</div>
+</section>
+
+<section class="green torn-top torn-bottom">
+  <h2>Дорогие друзья и родные!</h2>
+  <p>
+    В нашей жизни скоро состоится радостное событие — наша свадьба.<br>
+    Мы будем счастливы видеть вас рядом в этот день.
+  </p>
+</section>
+
+<section>
+  <div class="calendar-box">
+    <h3>Май 2026</h3>
+    <div class="calendar-grid">
+      <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+      <span></span><span></span><span></span><span class="day">1</span><span class="day">2</span><span class="day">3</span><span class="day">4</span>
+      <span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span><span class="day">10</span><span class="day">11</span>
+      <span class="day">12</span><span class="day">13</span><span class="day">14</span><span class="day">15</span><span class="day">16</span><span class="day">17</span><span class="day">18</span>
+      <span class="day">19</span><span class="day">20</span><span class="day">21</span><span class="day">22</span><span class="day active">23</span><span class="day">24</span><span class="day">25</span>
+      <span class="day">26</span><span class="day">27</span><span class="day">28</span><span class="day">29</span><span class="day">30</span><span class="day">31</span>
+    </div>
+  </div>
+</section>
+
+<section class="green torn-green">
+  <h2>Локация</h2>
+  <p>Лес «Еловый мыс 63»</p>
+  <a class="map-btn" href="https://maps.google.com" target="_blank">Открыть карту</a>
+</section>
+
+<section class="torn-top torn-bottom timeline">
+  <h2>Тайминг</h2>
+  <ul>
+    <li><span>Сбор гостей</span><strong>15:00</strong></li>
+    <li><span>Церемония</span><strong>16:00</strong></li>
+    <li><span>Банкет</span><strong>17:00</strong></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Dress-code</h2>
+  <p>Будем рады, если вы поддержите цветовую палитру торжества</p>
+  <div class="colors">
+    <span style="background:#6f7f6a"></span>
+    <span style="background:#8a7f6b"></span>
+    <span style="background:#b08d57"></span>
+    <span style="background:#d4b48c"></span>
+  </div>
+</section>
+
+<section class="green torn-top">
+  <h2>Анкета гостя</h2>
+
+  <form id="guestForm">
+    <input name="name" placeholder="Ваше имя" required>
+
+    <select name="attendance" required>
+      <option value="">Вы придёте?</option>
+      <option value="Да">Да</option>
+      <option value="Нет">К сожалению, нет</option>
+    </select>
+
+    <select name="transfer" required>
+      <option value="">Нужен ли трансфер?</option>
+      <option value="Да">Да, нужен</option>
+      <option value="Нет">Нет, приеду сам(а)</option>
+    </select>
+
+    <input name="allergy" placeholder="Аллергии / предпочтения">
+
+    <button type="submit">Заполнить анкету</button>
+  </form>
+
+  <p id="status"></p>
+</section>
+
+<footer>
+  <p>С любовью, Василий и Татьяна</p>
+</footer>
+
+<script>
+  /* scroll animation */
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(s => observer.observe(s));
+
+  /* form submit */
+  const form = document.getElementById('guestForm');
+  const status = document.getElementById('status');
+  const SCRIPT_URL = 'PASTE_GOOGLE_SCRIPT_URL';
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name.value,
+          attendance: form.attendance.value,
+          transfer: form.transfer.value,
+          allergy: form.allergy.value
+        })
+      });
+      status.textContent = 'Спасибо! Анкета отправлена 💚';
+      form.reset();
+    } catch {
+      status.textContent = 'Ошибка отправки. Попробуйте позже.';
+    }
+  });
+</script>
+
+</body>
+</html>
