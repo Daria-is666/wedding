@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <path
+    d="
+      M0,40
+      C30,20 70,60 120,42
+      C170,26 210,64 260,38
+      C310,20 350,66 400,40
+      C450,22 500,60 550,36
+      C600,18 650,64 700,42
+      C750,26 800,62 850,38
+      C900,22 950,60 1000,36
+      C1050,20 1100,56 1200,40
+      L1200,0 L0,0 Z
+    "
+    fill="#0b0b0b"
+  />
+
+  <rect width="1200" height="80" filter="url(#grain)" opacity="0.15"/>
+</svg>
